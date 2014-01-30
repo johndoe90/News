@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.phillip.news.domain.dto.DtoListConverter;
 
-
+ 
 /*@Controller
 @RequestMapping("/media")
 public class MediaController {
