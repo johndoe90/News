@@ -12,7 +12,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
  *
  */
 
-/*@Entity
+@Entity
 @Table(name = "LANGUAGES")
 public class Language extends AbstractPersistable<Long>{
 	private Language(){}
@@ -30,4 +30,4 @@ public class Language extends AbstractPersistable<Long>{
 	public void setCode(String code) {
 		this.code = code;
 	}
-}*/
+}
