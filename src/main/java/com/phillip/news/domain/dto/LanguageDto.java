@@ -2,8 +2,9 @@ package com.phillip.news.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.phillip.news.domain.Language;
 
-/*@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LanguageDto {
 	private LanguageDto(){}
 	public LanguageDto(Language language){
@@ -29,4 +30,4 @@ public class LanguageDto {
 	public void setCode(String code) {
 		this.code = code;
 	}
-}*/
+}

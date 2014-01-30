@@ -7,8 +7,9 @@ import org.hibernate.Hibernate;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.phillip.news.domain.Category;
 
-/*@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryDto {
 	private CategoryDto(){}
 	public CategoryDto(Category category){
@@ -57,4 +58,4 @@ public class CategoryDto {
 	public void setSort(String sort) {
 		this.sort = sort;
 	}
-}*/
+}

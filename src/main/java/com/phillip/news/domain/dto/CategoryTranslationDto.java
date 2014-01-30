@@ -2,8 +2,9 @@ package com.phillip.news.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.phillip.news.domain.CategoryTranslation;
 
-/*@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryTranslationDto {
 	private CategoryTranslationDto(){}
 	public CategoryTranslationDto(CategoryTranslation translation){
@@ -39,4 +40,4 @@ public class CategoryTranslationDto {
 	public void setLanguage(LanguageDto language) {
 		this.language = language;
 	}
-}*/
+}
