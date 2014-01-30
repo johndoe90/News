@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-/*public class Languages {
+public class Languages {
 	public static final Language DEFAULT = new Language(Locale.ENGLISH.getLanguage());
 	
 	public static final Language GERMAN = new Language(Locale.GERMAN.getLanguage());
@@ -13,4 +13,4 @@ import java.util.Locale;
 	public static List<Language> getSupportedLanguages(){
 		return Arrays.asList(GERMAN, ENGLISH);
 	}
-}*/
+}

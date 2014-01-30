@@ -24,7 +24,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 				          + "ORDER BY m.DATE DESC, m.id DESC "
 				            + "LIMIT :quantity",
 		resultClass = Media.class)
-})
+})*/
 
 @Entity
 @Table(name = "MEDIA", uniqueConstraints = @UniqueConstraint(columnNames = {"URL"}))
@@ -187,4 +187,4 @@ public class Media extends AbstractPersistable<Long>{
 	public void setConsumed(Integer consumed) {
 		this.consumed = consumed;
 	}
-}*/
+}
