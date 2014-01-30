@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+    
+    <head th:include="common/head :: head" th:with="title='Home'"></head>
+    
+	<body>
+		
+		<input id="loadMore" type="button" value="loadMore" />
+		<div id="mediaContainer"></div>
+		
+		<script id="mediaTemplate" type="text/template">
+			<div id="{{id}}" class="media">
+				<div class="inline">
+					<a href="{{url}}">					
+						<img src="{{image}}" alt="" width="200px" height="200px" />
+					</a>
+				</div>
+				<div class="inline wtf">
+					<h4>{{title}}</h4>
+					<p>{{description}} id: {{id}} date:{{date}}</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</script>
+	</body>
+</html>
+
+
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">  
+	<head th:fragment="head">
+		<title th:text="${title}"></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<link rel="stylesheet" th:href="@{/resources/css/style.css}"/>
+		<link rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.css}"/>
+		
+      	<script type="text/javascript" th:src="@{/resources/js/jquery.js}"></script>
+      	<script type="text/javascript" th:src="@{/resources/js/mustache.js}"></script>
+      	<script type="text/javascript" th:src="@{/resources/js/masonry.js}"></script>
+      	<script type="text/javascript" th:src="@{/resources/js/bootstrap.js}"></script>
+      	<script type="text/javascript" th:src="@{/resources/js/application.js}"></script>
+      	
+      	<!-- <script type="text/javascript" th:src="@{/resources/js/bootstrap.js}"></script> -->
+      	<!-- <link rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.css}"/> -->
+	</head>
+</html>

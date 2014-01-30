@@ -1,0 +1,19 @@
+.media{
+	display: inline-block;
+	margin: 2px;
+	border: 1px solid hsla(0,100%,0%,0.25);
+}
+
+.inline{
+	float: left;
+}
+
+.wtf{
+	width: 250px;
+}
+
+#mediaContainer{
+	width: 100%;
+	height: 95%;
+}
+
