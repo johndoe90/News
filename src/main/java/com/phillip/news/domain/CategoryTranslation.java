@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-@Entity
+/*@Entity
 @Table(name = "CATEGORY_TRANSLATIONS")
 public class CategoryTranslation extends AbstractPersistable<Long>{
 	private CategoryTranslation(){}
@@ -23,7 +23,7 @@ public class CategoryTranslation extends AbstractPersistable<Long>{
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name = "CATEGORY_ID"/*, nullable = false*/)
+	@JoinColumn(name = "CATEGORY_ID")
 	private Category category;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -53,4 +53,4 @@ public class CategoryTranslation extends AbstractPersistable<Long>{
 	public void setLanguage(Language language) {
 		this.language = language;
 	}
-}
+}*/

@@ -2,11 +2,8 @@ package com.phillip.news.service;
 
 import java.util.List;
 
-import com.phillip.news.domain.Category;
-import com.phillip.news.domain.Media;
-import com.phillip.news.domain.MediaProvider;
 
-public interface MediaService {
+/*public interface MediaService {
 	Media persist(Media media);
 	Media findById(Long id);
 	Media findByUrl(String url);
@@ -22,4 +19,4 @@ public interface MediaService {
 	List<Media> findAfterThis(List<Category> categories, List<MediaProvider> mediaProviders, Media last, Integer quantity);
 	List<Media> findBeforeThis(List<Category> categories, List<MediaProvider> mediaProviders, Media first, Integer quantity);
 	List<Media> findRecent(List<Category> categories, List<MediaProvider> mediaProviders, Integer quantity);
-}
+}*/

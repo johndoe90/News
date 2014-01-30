@@ -2,9 +2,8 @@ package com.phillip.news.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.phillip.news.domain.Media;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+/*@JsonIgnoreProperties(ignoreUnknown = true)
 public class MediaDto {
 
 	private MediaDto(){}
@@ -182,4 +181,4 @@ public class MediaDto {
 	public void setConsumed(Integer consumed) {
 		this.consumed = consumed;
 	}
-}
+}*/

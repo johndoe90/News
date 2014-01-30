@@ -17,7 +17,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-@Entity
+/*@Entity
 @Table(name = "CATEGORIES", uniqueConstraints = @UniqueConstraint(columnNames = {"QUALIFIED_NAME"}))
 public class Category extends AbstractPersistable<Long>{
 	private Category(){}
@@ -73,4 +73,4 @@ public class Category extends AbstractPersistable<Long>{
 	public void setSort(String sort) {
 		this.sort = sort;
 	}
-}
+}*/

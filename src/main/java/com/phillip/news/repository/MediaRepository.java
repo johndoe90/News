@@ -8,8 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.phillip.news.domain.Media;
 
-public interface MediaRepository extends JpaRepository<Media, Long>{
+/*public interface MediaRepository extends JpaRepository<Media, Long>{
 	Media findByUrl(String url);
-}
+}*/

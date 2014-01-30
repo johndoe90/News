@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Categories {
+/*public class Categories {
 	public static final Category OTHER = new Category("other", null, null);
 	
 	public static final Category POLITICS = new Category("politics", null, null);
@@ -17,4 +17,4 @@ public class Categories {
 	public static final Category SPORTS_FOOTBALL = new Category("sports_football", null, null);
 	public static final Category SPORTS_WINTERSPORTS = new Category("sports_wintersports", null, null);
 	public static final Category SPORTS_MOTORSPORTS = new Category("sports_motorsports", null, null);
-}
+}*/

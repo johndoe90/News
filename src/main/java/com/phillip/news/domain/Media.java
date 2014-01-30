@@ -13,7 +13,7 @@ import javax.persistence.UniqueConstraint;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-@NamedNativeQueries({
+/*@NamedNativeQueries({
 	@NamedNativeQuery(
 		name = "queryMedia", 
 		query = "SELECT * FROM MEDIA m "
@@ -187,4 +187,4 @@ public class Media extends AbstractPersistable<Long>{
 	public void setConsumed(Integer consumed) {
 		this.consumed = consumed;
 	}
-}
+}*/

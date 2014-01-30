@@ -11,7 +11,7 @@ import javax.persistence.UniqueConstraint;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-@Entity
+/*@Entity
 @Table(name = "MEDIA_PROVIDERS", uniqueConstraints = @UniqueConstraint(columnNames = "MEDIA_PROVIDER_ID"))
 public class MediaProvider extends AbstractPersistable<Long>{
 
@@ -78,4 +78,4 @@ public class MediaProvider extends AbstractPersistable<Long>{
 	public void setLogoLarge(String logoLarge) {
 		this.logoLarge = logoLarge;
 	}
-}
+}*/
