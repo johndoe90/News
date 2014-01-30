@@ -11,10 +11,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 //import javax.persistence.Query;
 
-
-
-
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
@@ -23,9 +19,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import com.phillip.news.domain.Category;
+import com.phillip.news.domain.Media;
+import com.phillip.news.domain.MediaProvider;
+import com.phillip.news.repository.CategoryRepository;
+import com.phillip.news.repository.MediaProviderRepository;
+import com.phillip.news.repository.MediaRepository;
+import com.phillip.news.service.MediaService;
 
 
-/*@Service
+
+@Service
 public class MediaServiceImpl implements MediaService{
 
 	@PersistenceContext
@@ -242,4 +246,4 @@ public class MediaServiceImpl implements MediaService{
 		
 		return query.list();
 	}
-}*/
+}
