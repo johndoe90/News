@@ -13,10 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.phillip.news.domain.Category;
+import com.phillip.news.domain.Media;
+import com.phillip.news.domain.MediaProvider;
 import com.phillip.news.domain.dto.DtoListConverter;
+import com.phillip.news.domain.dto.MediaDto;
+import com.phillip.news.service.CategoryService;
+import com.phillip.news.service.MediaProviderService;
+import com.phillip.news.service.MediaService;
 
  
-/*@Controller
+@Controller
 @RequestMapping("/media")
 public class MediaController {
 
@@ -110,4 +117,4 @@ public class MediaController {
 		
 		return DtoListConverter.getInstance().convert(media, MediaDto.class);
 	}
-}*/
+}
