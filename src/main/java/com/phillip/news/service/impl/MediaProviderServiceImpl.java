@@ -10,9 +10,13 @@ import org.hibernate.Session;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import com.phillip.news.domain.MediaProvider;
+import com.phillip.news.repository.MediaProviderRepository;
+import com.phillip.news.service.MediaProviderService;
 
 
-/*@Service
+
+@Service
 public class MediaProviderServiceImpl implements MediaProviderService{
 	
 	private final MediaProviderRepository mediaProviderRepository;
@@ -61,4 +65,4 @@ public class MediaProviderServiceImpl implements MediaProviderService{
 	public List<MediaProvider> findAll() {
 		return mediaProviderRepository.findAll();
 	}
-}*/
+}

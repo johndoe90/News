@@ -7,9 +7,14 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import com.phillip.news.domain.Language;
+import com.phillip.news.domain.Languages;
+import com.phillip.news.repository.LanguageRepository;
+import com.phillip.news.service.LanguageService;
 
 
-/*@Service
+
+@Service
 public class LanguageServiceImpl implements LanguageService{
 	
 	@PersistenceContext
@@ -46,4 +51,4 @@ public class LanguageServiceImpl implements LanguageService{
 		
 		return false;
 	}
-}*/
+}

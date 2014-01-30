@@ -2,8 +2,10 @@ package com.phillip.news.service;
 
 import java.util.List;
 
+import com.phillip.news.domain.Category;
 
-/*public interface CategoryService {
+
+public interface CategoryService {
 	Category persist(Category category);
 	
 	List<Category> findAll();
@@ -12,4 +14,4 @@ import java.util.List;
 	Category findById(Long id);
 	Category findByQualifiedName(String qualifiedName);
 	List<Category> findById(List<Long> ids);
-}*/
+}

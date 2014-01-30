@@ -15,9 +15,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import com.phillip.news.domain.Category;
+import com.phillip.news.repository.CategoryRepository;
+import com.phillip.news.service.CategoryService;
 
 
-/*@Service
+
+@Service
 public class CategoryServiceImpl implements CategoryService{
 
 	@PersistenceContext
@@ -67,4 +71,4 @@ public class CategoryServiceImpl implements CategoryService{
 	public List<Category> findAllCategories() {
 		return categoryRepository.findAllCategories();
 	}
-}*/
+}
