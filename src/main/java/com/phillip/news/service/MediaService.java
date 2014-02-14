@@ -14,12 +14,14 @@ public interface MediaService {
 	void consume(Media media);
 	Boolean exists(String URL);
 	List<Media> findAll();
+	List<Media> findAll(List<Long> ids);
 
-	List<Media> query(List<Long> categoryIds, List<Long> mediaProviderIds, String q, Integer quantity, Media first);
+	List<Media> query(String q, Integer quantity, Media first);
+	//List<Media> query(List<Long> categoryIds, List<Long> mediaProviderIds, String q, Integer quantity, Media first);
 	
 	List<Media> findByCategory(Category category);
 	List<Media> findByMediaProvider(MediaProvider mediaProvider);
-	List<Media> findBetweenThem(List<Category> categories, List<MediaProvider> mediaProviders, Media first, Media last);
+	//List<Media> findBetweenThem(List<Category> categories, List<MediaProvider> mediaProviders, Media first, Media last);
 	List<Media> findAfterThis(List<Category> categories, List<MediaProvider> mediaProviders, Media last, Integer quantity);
 	List<Media> findBeforeThis(List<Category> categories, List<MediaProvider> mediaProviders, Media first, Integer quantity);
 	List<Media> findRecent(List<Category> categories, List<MediaProvider> mediaProviders, Integer quantity);

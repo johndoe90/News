@@ -13,16 +13,17 @@ import javax.persistence.UniqueConstraint;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+// '\\:\\:' --> escape colon in sql query
+// CREATE INDEX keywords_idx ON media USING gin(to_tsvector('german', keywords));
+
 @NamedNativeQueries({
 	@NamedNativeQuery(
 		name = "queryMedia", 
 		query = "SELECT * FROM MEDIA m "
-				  + "WHERE m.CATEGORY_ID IN ( :categories ) "
-				    + "AND m.MEDIA_PROVIDER_ID IN ( :mediaProviders ) "
-				      +  "AND m.date < :date "
-				        + "AND MATCH(m.KEYWORDS) AGAINST( :q ) "
-				          + "ORDER BY m.DATE DESC, m.id DESC "
-				            + "LIMIT :quantity",
+				  + "WHERE m.date < :date "
+				    + "AND to_tsvector( :lang \\:\\:regconfig, m.keywords) @@ to_tsquery( :lang \\:\\:regconfig, :q ) "
+				      + "ORDER BY m.DATE DESC, m.id DESC "
+				        + "LIMIT :quantity",
 		resultClass = Media.class)
 })
 

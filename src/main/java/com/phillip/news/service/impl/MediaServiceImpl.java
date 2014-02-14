@@ -65,6 +65,13 @@ public class MediaServiceImpl implements MediaService{
 		
 		return mediaRepository.findOne(id);
 	}
+	
+	@Override
+	public List<Media> findAll(List<Long> ids){
+		Assert.notEmpty(ids);
+		
+		return mediaRepository.findAll(ids);
+	}
 
 	@Override
 	public Boolean exists(String URL) {
@@ -125,9 +132,7 @@ public class MediaServiceImpl implements MediaService{
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Media> findRecent(List<Category> categories, List<MediaProvider> mediaProviders, Integer quantity) {
-		Assert.notEmpty(categories);
-		Assert.notEmpty(mediaProviders);
-		Assert.notNull(quantity);
+		if(categories == null || categories.isEmpty() || mediaProviders == null || mediaProviders.isEmpty()) { return new ArrayList<Media>(); }		
 		
 		Session session = em.unwrap(Session.class);
 		List<Media> media = session.createCriteria(Media.class)
@@ -147,8 +152,7 @@ public class MediaServiceImpl implements MediaService{
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Media> findAfterThis(List<Category> categories, List<MediaProvider> mediaProviders, Media last, Integer quantity) {
-		Assert.notEmpty(categories);
-		Assert.notEmpty(mediaProviders);
+		if(categories == null || categories.isEmpty() || mediaProviders == null || mediaProviders.isEmpty()) { return new ArrayList<Media>(); }		
 		Assert.noNullElements(new Object[]{last, quantity});
 		
 		Session session = em.unwrap(Session.class);
@@ -176,8 +180,7 @@ public class MediaServiceImpl implements MediaService{
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Media> findBeforeThis(List<Category> categories, List<MediaProvider> mediaProviders, Media first, Integer quantity) {
-		Assert.notEmpty(categories);
-		Assert.notEmpty(mediaProviders);
+		if(categories == null || categories.isEmpty() || mediaProviders == null || mediaProviders.isEmpty()) { return new ArrayList<Media>(); }		
 		Assert.noNullElements(new Object[]{first, quantity});
 		
 		Session session = em.unwrap(Session.class);
@@ -200,8 +203,7 @@ public class MediaServiceImpl implements MediaService{
 	}
 
 	
-	//remove first and last ?
-	@Override
+	/*@Override
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Media> findBetweenThem(List<Category> categories, List<MediaProvider> mediaProviders, Media first, Media last) {
@@ -222,7 +224,7 @@ public class MediaServiceImpl implements MediaService{
 								.list();
 		
 		return media;
-	}
+	}*/
 
 	@Override
 	@Transactional
@@ -231,16 +233,16 @@ public class MediaServiceImpl implements MediaService{
 		mediaRepository.save(media);
 	}
 	
+	
 	@Override
 	@Transactional(readOnly = true)
-	public List<Media> query(List<Long> categoryIds, List<Long> mediaProviderIds, String q, Integer quantity, Media first) {		
-		
-		
+	public List<Media> query(String q, Integer quantity, Media first) {		
 		Session session = em.unwrap(Session.class);
-		Query query = session.getNamedQuery("queryMedia");		
-		query.setParameterList("categories", categoryIds);
-		query.setParameterList("mediaProviders", mediaProviderIds);
-		query.setParameter("q", q);
+		Query query = session.getNamedQuery("queryMedia");
+		//query.setParameterList("categories", categoryIds);
+		//query.setParameterList("mediaProviders", mediaProviderIds);
+		query.setString("lang", "german");
+		query.setString("q", q.trim().replace(" ", " & "));
 		query.setParameter("quantity", quantity);
 		query.setParameter("date", first != null ? first.getDate() : new Date().getTime());
 		

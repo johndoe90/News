@@ -44,13 +44,21 @@ public class MediaController {
 	
 	//@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, params = {""})
 	
-	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, params = {"categories[]", "mediaProviders[]", "q", "quantity"})
-	public @ResponseBody List<MediaDto> query(@RequestParam("categories[]") Long[] categories, @RequestParam("mediaProviders[]") Long[] mediaProviders, @RequestParam String q, @RequestParam Integer quantity, @RequestParam(required = false) Long first){
-		Media firstMedium = first != null ? mediaService.findById(first) : null;
-		List<Media> media = mediaService.query(Arrays.asList(categories), Arrays.asList(mediaProviders), q, quantity, firstMedium);
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, params = {"ids[]"})
+	public @ResponseBody List<MediaDto> findAll(@RequestParam("ids[]") Long[] ids){
+		List<Media> media = mediaService.findAll(Arrays.asList(ids));
 		
 		return DtoListConverter.getInstance().convert(media, MediaDto.class);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, params = {"q"})
+	public @ResponseBody List<MediaDto> query(@RequestParam String q, @RequestParam(required = false) Integer quantity, @RequestParam(required = false) Long first){
+		Media firstMedium = first != null ? mediaService.findById(first) : null;
+		List<Media> media = mediaService.query(q, quantity != null ? quantity : 10, firstMedium);
+		
+		return DtoListConverter.getInstance().convert(media, MediaDto.class);
+	}
+	
 	
 	@RequestMapping(value = "/{id}/consume", method = RequestMethod.POST)
 	public @ResponseBody void consume(@PathVariable("id") Long id){
